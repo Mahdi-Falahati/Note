@@ -40,6 +40,8 @@ function getNote(event) {
 
     // reset textArea
     document.querySelector("#inputnote").value = " ";
+    
+    addNoteToLoacalStorage(note);
 
 }
 
@@ -78,7 +80,18 @@ function cheekNotesExistOnLocalStorage() {
 
     return notes;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> js
+// add textArea data to local storage 
+function addNoteToLoacalStorage(note) {
+
+    // cheeking local storage content 
+    const notes = cheekNotesExistOnLocalStorage();
+
+    // add new note to array
+    notes.push(note);
+
+    // change notes array to notes string for adding to lacal storage
+    // add new notes to local storage
+    localStorage.setItem("notes", JSON.stringify(notes));
+
+}
