@@ -56,3 +56,26 @@ function removeNoteFromNoteList(event) {
     }
 
 }
+
+// cheek content on local storage
+function cheekNotesExistOnLocalStorage() {
+    let notes;
+
+    //get from local storage
+    let gfls = localStorage.getItem("notes");
+
+    // if key notes on locla storage is epmpty return empty array
+    if (gfls == null) {
+
+        notes = [];
+
+    } else {
+
+        //if key notes on locla storage is not epmpty return value notes with array
+        notes = JSON.parse(gfls);
+
+    }
+
+    return notes;
+}
+
