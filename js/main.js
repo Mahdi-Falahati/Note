@@ -6,6 +6,9 @@ function eventListners() {
     // event for removing note
     const btnRemove = document.querySelector('#note');
     btnRemove.addEventListener("click", removeNoteFromNoteList)
+    
+     // loead note from local storage
+    document.addEventListener("DOMContentLoaded", loadeNOrteFromLocalStorage)
 
 }
 eventListners();
@@ -93,5 +96,38 @@ function addNoteToLoacalStorage(note) {
     // change notes array to notes string for adding to lacal storage
     // add new notes to local storage
     localStorage.setItem("notes", JSON.stringify(notes));
+
+}
+
+
+// loading note from locla storage
+function loadeNOrteFromLocalStorage() {
+
+    // cheeking local storage content
+    const notes = cheekNotesExistOnLocalStorage();
+
+    //get data to local storage and loop on this content
+    notes.forEach(function(note) {
+
+        // create li 
+        const li = document.createElement("li");
+        let content = document.createTextNode(note);
+        li.appendChild(content);
+
+
+        // get ul for inserting li created to page
+        const ul = document.querySelector("#note");
+        ul.appendChild(li);
+
+        // create btn for remove note
+        const btnRemove = document.createElement("a");
+        btnRemove.setAttribute("class", "delete");
+        btnRemove.appendChild(document.createTextNode("X"));
+        li.appendChild(btnRemove);
+
+        //delete alarm li
+        document.querySelector("#alarm").innerHTML = " ";
+
+    });
 
 }
