@@ -78,3 +78,7 @@ function cheekNotesExistOnLocalStorage() {
 
     return notes;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> js
