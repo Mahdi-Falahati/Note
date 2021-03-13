@@ -1,8 +1,11 @@
 // event listenrs
 function eventListners() {
- // event get note from textArea
+    // event get note from textArea
     const btn = document.querySelector("#btn");
     btn.addEventListener("click", getNote);
+    // event for removing note
+    const btnRemove = document.querySelector('#note');
+    btnRemove.addEventListener("click", removeNoteFromNoteList)
 
 }
 eventListners();
@@ -37,5 +40,19 @@ function getNote(event) {
 
     // reset textArea
     document.querySelector("#inputnote").value = " ";
+
+}
+
+// remove a note from note list
+function removeNoteFromNoteList(event) {
+
+    // if in tag event in class list  contains 'delete' get that elemnt
+    if (event.target.classList.contains("delete")) {
+
+        //remove item on Notelist
+        // get a tag and acsess to father a <li> finaly remove li tag 
+        event.target.parentElement.remove();
+
+    }
 
 }
