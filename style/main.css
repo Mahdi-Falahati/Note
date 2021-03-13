@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #d0d0d0;
+}
+
+#title {
+    margin-top: 6px;
+    margin-left: 25%;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    line-height: 40px;
+    color: #4d005c;
+    background-color: #e40575;
+    background: linear-gradient(to left, #ff0000, #c4c400, #ff0000);
+    border-radius: 50px;
+}
+
+.top-title-form {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.title-form {
+    width: 100%;
+    text-align: center;
+    float: left;
+    margin-top: 4px;
+    padding-right: 12px;
+    color: #333;
+}
+
+form {
+    float: left;
+    margin-left: 10%;
+    width: 80%;
+    height: 250px;
+    text-align: right;
+    margin-top: 60px;
+    border: 2px dashed #66cbf6;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#inputnote {
+    width: 300px;
+    height: 100px;
+    direction: rtl;
+    font-size: 18px;
+    border: none;
+    border-bottom: dotted 2px #7978c4;
+    border-left: dotted 2px #7978c4;
+    background-color: transparent;
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#inputnote:focus {
+    transition: all 1s;
+    color: #0400ff;
+}
+
+input[type="submit"] {
+    width: 300px;
+    height: 30px;
+    background: #7978c4;
+    border: none;
+    border-bottom: 1px solid #e40575;
+    border-radius: 30px;
+    color: #ffdc18;
+}
+
+input[type="submit"]:hover {
+    transition: all 1s;
+    background-color: #333;
+    color: #ffdc18;
+}
+
+#note {
+    margin-top: 38px;
+    width: 70%;
+    margin-left: 12%;
+    line-height: 30px;
+    height: auto;
+    background: #000;
+    background: linear-gradient(to left, #7978c4, #b61063, #7978c4);
+    direction: rtl;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+li {
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    letter-spacing: 2px;
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+}
+
+.delete {
+    float: left;
+    color: #ff0000;
+    background-color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 70%;
+    cursor: crosshair;
+}
