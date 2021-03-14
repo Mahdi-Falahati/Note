@@ -3,17 +3,20 @@ function eventListners() {
     // event get note from textArea
     const btn = document.querySelector("#btn");
     btn.addEventListener("click", getNote);
+
     // event for removing note
     const btnRemove = document.querySelector('#note');
     btnRemove.addEventListener("click", removeNoteFromNoteList)
-    
-     // loead note from local storage
+
+    // loead note from local storage
     document.addEventListener("DOMContentLoaded", loadeNOrteFromLocalStorage)
 
 }
 eventListners();
 
+
 //functions
+
 // get note from TextArea and create tag li and insert li to page
 function getNote(event) {
 
@@ -43,7 +46,7 @@ function getNote(event) {
 
     // reset textArea
     document.querySelector("#inputnote").value = " ";
-    
+
     addNoteToLoacalStorage(note);
 
 }
@@ -59,6 +62,9 @@ function removeNoteFromNoteList(event) {
         event.target.parentElement.remove();
 
     }
+
+    // remove note from localstorage
+    removeNoteFromLocalStorage(event.target.parentElement.textContent)
 
 }
 
@@ -98,7 +104,6 @@ function addNoteToLoacalStorage(note) {
     localStorage.setItem("notes", JSON.stringify(notes));
 
 }
-
 
 // loading note from locla storage
 function loadeNOrteFromLocalStorage() {
