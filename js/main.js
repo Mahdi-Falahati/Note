@@ -131,3 +131,30 @@ function loadeNOrteFromLocalStorage() {
     });
 
 }
+
+//remove note from local storage
+function removeNoteFromLocalStorage(noteContent) {
+
+    // cut X from end of note
+    const deleteNote = noteContent.substring(0, noteContent.length - 1);
+
+    //get notes from local storage 
+    const notesFls = cheekNotesExistOnLocalStorage();
+
+    // cheek note delete on arraies note
+    notesFls.forEach(function(element, index) {
+
+        //find note for delete and deleting on array
+        if (deleteNote == element) {
+
+            // have new array and deleted select item 
+            notesFls.splice(index, 1);
+
+        }
+
+    });
+
+    //set new array to local storage
+    localStorage.setItem("notes", JSON.stringify(notesFls))
+
+}
